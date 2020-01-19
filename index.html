@@ -514,7 +514,7 @@
 				return parseInt(item)
 			})
 		} else {
-			ignoreListNumber = []
+			ignoreListNumber = ['1','2']
 		}
 
 		var appConfig = localStorage.getItem('appConfig')
@@ -523,7 +523,7 @@
 		} else {
 			appConfig = {
 				numberLife: 5,
-				listConfig: ['1','2','3','4','6'],
+				listConfig: ['1-2,3,5','2','3','4','6'],
 				listConfigUser: {
 					"1": "Pham Tung Lam",
 					"2": "Pham Tung Lam 2",
