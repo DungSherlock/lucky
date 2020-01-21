@@ -514,7 +514,7 @@
 				return parseInt(item)
 			})
 		} else {
-			ignoreListNumber = [279,280,281,283,284,244,258,259,260,261,262,263,264,271,272]
+			ignoreListNumber = ['279,280,281,283,284,244,258,259,260,261,262,263,264,271,272']
 		}
 
 		var appConfig = localStorage.getItem('appConfig')
@@ -806,15 +806,13 @@
 					if (item.indexOf('-') >= 0) {
 						start = parseInt(item.substring(0, item.indexOf('-')))
 						end = parseInt(item.substring(item.indexOf('-') + 1))
-						if (end >= start) {
-							data = {
-								start: totalNumber,
-								end: totalNumber + end - start,
-								startNumber: start
-							}
-							totalNumber += end - start + 1
-							listAfterConvert.push(data)
+
+						data = {
+							start: totalNumber,
+							end: totalNumber + end - start,
+							startNumber: start
 						}
+						totalNumber += end - start + 1
 					} else {
 						data = {
 							start: totalNumber,
@@ -822,8 +820,8 @@
 							startNumber: parseInt(item)
 						}
 						totalNumber++;
-						listAfterConvert.push(data)
 					}
+					listAfterConvert.push(data)
 				})
 				let random_position = Math.floor(Math.random() * totalNumber);
 
